@@ -1,0 +1,13 @@
+#!/bin/bash
+
+echo 'Checking coverage...'
+coverage run --source=../covasim_schools -m pytest test_*
+
+echo 'Creating HTML report...'
+coverage html
+
+echo 'Running report...'
+coverage report
+
+echo 'Report location:'
+echo "`pwd`/htmlcov/index.html"
